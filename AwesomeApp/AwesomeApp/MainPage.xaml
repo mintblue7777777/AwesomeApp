@@ -19,24 +19,47 @@
     <ContentPage.BindingContext>
         <local:MainPageViewModel />
     </ContentPage.BindingContext>
-    <StackLayout VerticalOptions="Center">
-        <Label Text="{StaticResource text}" />
-        <Label x:Name="labelCount" Text="Hello world" />
+
+    <StackLayout VerticalOptions="Start">
         <Frame
             Margin="5"
-            Padding="24"
+            Padding="2"
             BackgroundColor="#2196F3"
             CornerRadius="10">
             <Label
-                FontSize="36"
+                FontSize="20"
                 HorizontalTextAlignment="Center"
                 Text="Welcome to Xamarin.Forms!"
                 TextColor="White" />
         </Frame>
-        <Label
-            Padding="30,10,30,10"
-            FontSize="Title"
-            Text="Start developing now" />
+        <Label Text="{StaticResource text}" />
+        <Label x:Name="labelCount">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span
+                        FontAttributes="Bold"
+                        ForegroundColor="Red"
+                        Text="H" />
+                    <Span BackgroundColor="Silver" Text="e" />
+                    <Span
+                        FontAttributes="Bold,Italic"
+                        FontSize="Large"
+                        Text="l" />
+                    <Span
+                        FontSize="Small"
+                        ForegroundColor="Aqua"
+                        Text="l" />
+                    <Span Text="o" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <ListView HeightRequest="50" ItemsSource="{Binding people}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" TextColor="#1D1258" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Label Padding="30,24,30,0" FontSize="16">
             <Label.FormattedText>
                 <FormattedString>
@@ -47,20 +70,47 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        <Button Clicked="Button_Clicked" Text="Click Me!!!!!!!!!!    " />
+        <Button
+            Margin="5"
+            BorderColor="Olive"
+            BackgroundColor="Teal"
+            BorderRadius="30"
+            BorderWidth="5"
+            Clicked="Button_Clicked"
+            CornerRadius="10"
+            HeightRequest="40"
+            Text="Click Me!"
+            TextColor="White"
+            WidthRequest="20" />
         <Slider
             x:Name="slider"
             Maximum="100"
             Minimum="0"
             VerticalOptions="StartAndExpand" />
         <Entry HorizontalOptions="Fill" Text="{Binding Value, Source={x:Reference slider}, StringFormat='Slider value is {0:000}'}" />
-        <ListView ItemsSource="{Binding people}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Name}" TextColor="#1D1258" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <ActivityIndicator
+            HorizontalOptions="Center"
+            IsRunning="True"
+            VerticalOptions="Center"
+            Color="Red" />
+        <StackLayout VerticalOptions="Start">
+            <StackLayout Orientation="Horizontal">
+                <BoxView
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="50"
+                    Color="Purple" />
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label FontAttributes="Bold" Text="名前" />
+                        <Label Text="@xxxxxxxxx" />
+                    </StackLayout>
+                    <Label Text="本文本文本文本文本文本文本文本文本文本文本文本文本文" VerticalOptions="FillAndExpand" />
+                    <Label Text="tweeted by sample" VerticalOptions="End" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

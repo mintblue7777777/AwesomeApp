@@ -18,9 +18,11 @@ namespace AwesomeApp
                 TimeSpan.FromSeconds(5),
                 () =>
                 {
+                    if (this.people.Count >= 10) return false;
                     this.people.Add(new Person { Name = $"tanaka{r.Next()}" });
                     return true;
                 });
+
         }
     }
 }
