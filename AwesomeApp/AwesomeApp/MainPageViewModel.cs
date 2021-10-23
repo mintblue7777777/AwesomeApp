@@ -11,6 +11,26 @@ namespace AwesomeApp
     class MainPageViewModel : BindableBase
     {
         public ObservableCollection<Person> people { get; } = new ObservableCollection<Person>();
+
+        private string message;
+        public string Message
+        {
+            get { return this.message; }
+            set { this.SetProperty(ref this.message, value); }
+        }
+
+        public Command NowCommand { get; }
+        private bool canExecute;
+        public bool CanExecute
+        {
+            get { return canExecute; }
+            set
+            {
+                SetProperty(ref canExecute, value);
+                NowCommand.ChangeCanExecute();
+            }
+        }
+
         public MainPageViewModel()
         {
             var r = new Random();
@@ -23,6 +43,12 @@ namespace AwesomeApp
                     return true;
                 });
 
+            this.NowCommand = new Command(
+                _ => this.Message = DateTime.Now.ToString(),
+                _ =>this.CanExecute
+                );
         }
+
+
     }
 }

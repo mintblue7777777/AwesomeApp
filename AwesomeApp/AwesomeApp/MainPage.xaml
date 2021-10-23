@@ -7,7 +7,7 @@
     Title="Hello!!!!!">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <x:String x:Key="text">Hello</x:String>
+            <x:String x:Key="text">This is a long long long long long long long long long long text!!!!!!!</x:String>
             <local:StringFormatConverter x:Key="StringFormatConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -32,8 +32,19 @@
                 Text="Welcome to Xamarin.Forms!"
                 TextColor="White" />
         </Frame>
-        <Label Text="{StaticResource text}" />
-        <Label x:Name="labelCount">
+        <Button
+            x:Name="btnHandle"
+            Clicked="btnHandle_Clicked"
+            Text="Navigation To NextPate" />
+        <Label
+            FontSize="Small"
+            LineBreakMode="WordWrap"
+            Text="{StaticResource text}"
+            TextColor="Olive" />
+        <Label
+            x:Name="labelCount"
+            Margin="0"
+            FontSize="Small">
             <Label.FormattedText>
                 <FormattedString>
                     <Span
@@ -53,14 +64,14 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        <ListView HeightRequest="50" ItemsSource="{Binding people}">
+        <ListView HeightRequest="30" ItemsSource="{Binding people}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}" TextColor="#1D1258" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Label Padding="30,24,30,0" FontSize="16">
+        <!--<Label Padding="30,24,30,0" FontSize="16">
             <Label.FormattedText>
                 <FormattedString>
                     <FormattedString.Spans>
@@ -69,11 +80,11 @@
                     </FormattedString.Spans>
                 </FormattedString>
             </Label.FormattedText>
-        </Label>
+        </Label>-->
         <Button
-            Margin="5"
-            BorderColor="Olive"
+            Margin="1"
             BackgroundColor="Teal"
+            BorderColor="Olive"
             BorderRadius="30"
             BorderWidth="5"
             Clicked="Button_Clicked"
@@ -84,19 +95,22 @@
             WidthRequest="20" />
         <Slider
             x:Name="slider"
+            HeightRequest="20"
             Maximum="100"
             Minimum="0"
             VerticalOptions="StartAndExpand" />
         <Entry HorizontalOptions="Fill" Text="{Binding Value, Source={x:Reference slider}, StringFormat='Slider value is {0:000}'}" />
         <ActivityIndicator
+            HeightRequest="10"
             HorizontalOptions="Center"
             IsRunning="True"
             VerticalOptions="Center"
+            WidthRequest="10"
             Color="Red" />
         <StackLayout VerticalOptions="Start">
             <StackLayout Orientation="Horizontal">
                 <BoxView
-                    HeightRequest="50"
+                    HeightRequest="30"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     WidthRequest="50"
@@ -106,10 +120,42 @@
                         <Label FontAttributes="Bold" Text="名前" />
                         <Label Text="@xxxxxxxxx" />
                     </StackLayout>
-                    <Label Text="本文本文本文本文本文本文本文本文本文本文本文本文本文" VerticalOptions="FillAndExpand" />
+                    <Label
+                        FontSize="Small"
+                        Text="本文本文本文本文本文本文本文本文本文本文本文本文本文"
+                        VerticalOptions="FillAndExpand" />
                     <Label Text="tweeted by sample" VerticalOptions="End" />
                 </StackLayout>
             </StackLayout>
+        </StackLayout>
+        <Switch HorizontalOptions="Start" IsToggled="{Binding CanExecute, Mode=TwoWay}" />
+        <Button Command="{Binding NowCommand}" Text="Default" />
+        <Label Text="{Binding Message}" />
+        <StackLayout>
+            <Button
+                x:Name="scrollButton"
+                Clicked="scrollButton_Clicked"
+                Text="Scroll" />
+            <ScrollView
+                x:Name="scrollView"
+                Orientation="Both"
+                VerticalOptions="FillAndExpand">
+                <StackLayout>
+                    <BoxView
+                        HeightRequest="30"
+                        WidthRequest="500"
+                        Color="Red" />
+                    <BoxView
+                        HeightRequest="30"
+                        WidthRequest="500"
+                        Color="Blue" />
+                    <BoxView
+                        x:Name="boxViewYellow"
+                        HeightRequest="30"
+                        WidthRequest="500"
+                        Color="Yellow" />
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </StackLayout>
 

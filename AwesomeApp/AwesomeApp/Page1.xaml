@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AwesomeApp.Page1"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="text">This is a long long long long long long long long long long text!!!!!!!</x:String>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="Center" />
+            <Button
+                x:Name="btnPrev"
+                Clicked="btnPrev_Clicked"
+                Text="return" />
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                <Label Text="{Binding Date, Source={x:Reference datePicker}, StringFormat='{0:yyyy-MM-dd}'}" />
+                <DatePicker
+                    x:Name="datePicker"
+                    Format="yyyy/MM/dd"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+            <Editor HeightRequest="100" Text="{StaticResource text}" />
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="50"
+                Source="waterfront.jpg" />
+            <StackLayout Orientation="Horizontal">
+                <Entry
+                    Placeholder="acount"
+                    PlaceholderColor="Red"
+                    Text="Hello!"
+                    TextChanged="Entry_TextChanged"
+                    TextColor="Blue"
+                    WidthRequest="80" />
+                <Entry
+                    IsPassword="True"
+                    Placeholder="password"
+                    PlaceholderColor="Red"
+                    TextColor="Blue"
+                    WidthRequest="80" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
