@@ -24,17 +24,17 @@
             <StackLayout Orientation="Horizontal">
                 <Image
                     Aspect="AspectFit"
-                    HeightRequest="50"
+                    HeightRequest="30"
                     Source="waterfront.jpg" />
                 <Image
                     x:Name="image"
                     Aspect="Fill"
-                    HeightRequest="50"
-                    WidthRequest="50" />
+                    HeightRequest="30"
+                    WidthRequest="30" />
                 <Image
                     x:Name="image2"
                     Aspect="AspectFill"
-                    HeightRequest="50" />
+                    HeightRequest="30" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Entry
@@ -90,6 +90,13 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <ListView ItemsSource="{Binding People}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <SwitchCell On="True" Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <ListView
                 x:Name="listview2"
                 GroupDisplayBinding="{Binding Name}"
@@ -98,7 +105,7 @@
                 VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" />
+                        <EntryCell Text="{Binding Name}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
@@ -121,7 +128,11 @@
             <ListView ItemsSource="{Binding People}" VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}">
+                        <TextCell
+                            Detail="ここに詳細文字列を指定可能"
+                            DetailColor="Fuchsia"
+                            Text="{Binding Name}"
+                            TextColor="Black">
                             <TextCell.ContextActions>
                                 <MenuItem
                                     Command="{Binding BindingContext.ContextActionCommand, Source={x:Reference root}}"
@@ -129,6 +140,33 @@
                                     Text="Menu1" />
                             </TextCell.ContextActions>
                         </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding People}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                            Detail="ここに詳細文字列を指定可能"
+                            DetailColor="Fuchsia"
+                            ImageSource="SeatedMonkey.jpg"
+                            Text="{Binding Name}"
+                            TextColor="Black" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView
+                HasUnevenRows="True"
+                ItemsSource="{Binding People}"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label FontAttributes="Italic" Text="{Binding Name}" />
+                                <Image HeightRequest="25" Source="waterfront.jpg" />
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
