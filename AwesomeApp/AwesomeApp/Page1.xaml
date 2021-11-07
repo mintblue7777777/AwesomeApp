@@ -3,34 +3,39 @@
     x:Class="AwesomeApp.Page1"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+    xmlns:local="clr-namespace:AwesomeApp"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+    x:Name="root">
     <ContentPage.Resources>
         <ResourceDictionary>
             <x:String x:Key="text">This is a long long long long long long long long long long text!!!!!!!</x:String>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <local:Page1ViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center">
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="Center" />
             <Button
                 x:Name="btnPrev"
                 Clicked="btnPrev_Clicked"
                 Text="return" />
-            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                <Label Text="{Binding Date, Source={x:Reference datePicker}, StringFormat='{0:yyyy-MM-dd}'}" />
-                <DatePicker
-                    x:Name="datePicker"
-                    Format="yyyy/MM/dd"
-                    VerticalOptions="CenterAndExpand" />
+
+            <StackLayout Orientation="Horizontal">
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="50"
+                    Source="waterfront.jpg" />
+                <Image
+                    x:Name="image"
+                    Aspect="Fill"
+                    HeightRequest="50"
+                    WidthRequest="50" />
+                <Image
+                    x:Name="image2"
+                    Aspect="AspectFill"
+                    HeightRequest="50" />
             </StackLayout>
-            <Editor HeightRequest="100" Text="{StaticResource text}" />
-            <Image
-                Aspect="AspectFit"
-                HeightRequest="50"
-                Source="waterfront.jpg" />
             <StackLayout Orientation="Horizontal">
                 <Entry
                     Placeholder="acount"
@@ -46,6 +51,87 @@
                     TextColor="Blue"
                     WidthRequest="80" />
             </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Clicked="Button_Clicked" Text="AddItem" />
+                <Label x:Name="lblSelectedItem" />
+                <ListView
+                    x:Name="listView"
+                    Header="Headerだよ"
+                    ItemSelected="listView_ItemSelected"
+                    RowHeight="50"
+                    SeparatorColor="Crimson"
+                    SeparatorVisibility="Default"
+                    VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Foo" TextColor="Red" />
+                                    <Span BackgroundColor="Blue" Text="ter" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+            <ListView
+                x:Name="listview3"
+                IsPullToRefreshEnabled="True"
+                Refreshing="listview3_Refreshing"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView
+                x:Name="listview2"
+                GroupDisplayBinding="{Binding Name}"
+                GroupShortNameBinding="{Binding ShortName}"
+                IsGroupingEnabled="True"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="listview4" VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}">
+                            <TextCell.ContextActions>
+                                <MenuItem
+                                    Clicked="MenuItem_Clicked"
+                                    IconImageSource="waterfront.jpg"
+                                    Text="Menu1" />
+                                <MenuItem Clicked="MenuItem_Clicked_1" Text="Menu2" />
+                                <MenuItem Clicked="MenuItem_Clicked_2" Text="Menu3" />
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding People}" VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}">
+                            <TextCell.ContextActions>
+                                <MenuItem
+                                    Command="{Binding BindingContext.ContextActionCommand, Source={x:Reference root}}"
+                                    CommandParameter="{Binding}"
+                                    Text="Menu1" />
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

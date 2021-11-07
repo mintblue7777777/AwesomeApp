@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AwesomeApp.Page2"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="text">This is a long long long long long long long long long long text!!!!!!!</x:String>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                <Label Text="{Binding Date, Source={x:Reference datePicker}, StringFormat='{0:yyyy-MM-dd}'}" />
+                <DatePicker
+                    x:Name="datePicker"
+                    Format="yyyy/MM/dd"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+            <Editor HeightRequest="50" Text="{StaticResource text}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
