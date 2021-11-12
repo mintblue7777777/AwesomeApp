@@ -15,6 +15,8 @@ namespace AwesomeApp
         public Page2()
         {
             InitializeComponent();
+            var r = new Random();
+            this.listView.ItemsSource = Enumerable.Range(1, 100).Select(x => new Person() { Name = $"{x}番目の人" ,Age= r.Next(50)+30});
         }
     }
 }

@@ -40,8 +40,8 @@ namespace AwesomeApp
         public int Age
         {
             get { return (int)this.GetValue(AgeProperty); }
-            //よ書き込みはBindablePropertyKeyでおこなう
-            private set { this.SetValue(AgePropertyKey, value); }
+            //書き込みはBindablePropertyKeyでおこなう
+            set { this.SetValue(AgePropertyKey, value); }
         }
 
         //添付プロパティ

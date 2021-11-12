@@ -2,10 +2,32 @@
 <ContentPage
     x:Class="AwesomeApp.Page2"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AwesomeApp">
     <ContentPage.Resources>
         <ResourceDictionary>
             <x:String x:Key="text">This is a long long long long long long long long long long text!!!!!!!</x:String>
+            <DataTemplate x:Key="normalTemplate">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Name}" />
+                        <Label Text="{Binding Age}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="silverTemplate">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label HorizontalOptions="Start" Text="☆" />
+                        <Label Text="{Binding Name}" />
+                        <Label Text="{Binding Age}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <local:PersonDataTemplateSelector
+                x:Key="personDataTemplateSelector"
+                NormalTemplate="{StaticResource normalTemplate}"
+                SilverTemplate="{StaticResource silverTemplate}" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -22,6 +44,7 @@
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
             <Editor HeightRequest="50" Text="{StaticResource text}" />
+            <ListView x:Name="listView" ItemTemplate="{StaticResource personDataTemplateSelector}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
