@@ -11,6 +11,11 @@
             <ProgressBar x:Name="progressBar" Progress="0.2" />
             <SearchBar x:Name="searchBar" Placeholder="検索条件を入力してください" />
             <Label x:Name="label" HorizontalOptions="Center" />
+            <Slider
+                x:Name="slider"
+                Maximum="100"
+                Minimum="10" />
+            <Label HorizontalOptions="Center" Text="{Binding Value, Source={x:Reference slider}}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
