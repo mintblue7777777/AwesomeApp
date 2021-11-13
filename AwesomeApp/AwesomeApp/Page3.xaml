@@ -7,6 +7,8 @@
         <StackLayout>
             <Picker x:Name="picker" ItemDisplayBinding="{Binding Name}" />
             <Label Text="{Binding SelectedItem.Name, Source={x:Reference picker}, StringFormat='{0}さん'}" />
+            <Button Clicked="Button_Clicked" Text="ProgressTo" />
+            <ProgressBar x:Name="progressBar" Progress="0.2" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
