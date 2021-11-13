@@ -25,6 +25,10 @@
                     Minimum="20" />
                 <Label HorizontalOptions="Center" Text="{Binding Value, Source={x:Reference stepper}}" />
             </StackLayout>
+            <StackLayout VerticalOptions="Center">
+                <Switch x:Name="switch" HorizontalOptions="Center" />
+                <Label HorizontalOptions="Center" Text="{Binding IsToggled, Source={x:Reference switch}}" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
