@@ -16,6 +16,15 @@
                 Maximum="100"
                 Minimum="10" />
             <Label HorizontalOptions="Center" Text="{Binding Value, Source={x:Reference slider}}" />
+            <StackLayout VerticalOptions="Center">
+                <Stepper
+                    x:Name="stepper"
+                    HorizontalOptions="Center"
+                    Increment="5"
+                    Maximum="100"
+                    Minimum="20" />
+                <Label HorizontalOptions="Center" Text="{Binding Value, Source={x:Reference stepper}}" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
