@@ -10,7 +10,7 @@ namespace AwesomeApp
         {
             InitializeComponent();
 
-            MainPage = new Page3();
+            MainPage = new Page4();
         }
 
         protected override void OnStart()
