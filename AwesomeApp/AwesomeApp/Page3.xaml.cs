@@ -18,6 +18,10 @@ namespace AwesomeApp
             InitializeComponent();
             var People = new ObservableCollection<Person>(Enumerable.Range(1, 100).Select(x => new Person() { Name = $"{x}番目の人", }));
             this.picker.ItemsSource = People;
+
+            this.searchBar.SearchCommand = new Command(_ =>
+                this.label.Text = $"{this.searchBar.Text} で検索しました"
+            );
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

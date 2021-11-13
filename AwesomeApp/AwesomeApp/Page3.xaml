@@ -9,6 +9,8 @@
             <Label Text="{Binding SelectedItem.Name, Source={x:Reference picker}, StringFormat='{0}さん'}" />
             <Button Clicked="Button_Clicked" Text="ProgressTo" />
             <ProgressBar x:Name="progressBar" Progress="0.2" />
+            <SearchBar x:Name="searchBar" Placeholder="検索条件を入力してください" />
+            <Label x:Name="label" HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
