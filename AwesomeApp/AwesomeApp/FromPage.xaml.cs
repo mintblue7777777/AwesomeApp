@@ -19,7 +19,13 @@ namespace AwesomeApp
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await this.Navigation.PushModalAsync(new NextPage("引き渡したパラメータを表示"));
+            //await this.Navigation.PushModalAsync(new NextPage("引き渡したパラメータを表示"));
+            await this.Navigation.PushAsync(new NextPage("引き渡したパラメータを表示"));
+        }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            this.label.Text = $"{((ToolbarItem)sender).Text}が押されました";
         }
     }
 }

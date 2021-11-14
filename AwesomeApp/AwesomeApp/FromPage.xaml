@@ -2,10 +2,17 @@
 <ContentPage
     x:Class="AwesomeApp.FromPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="FromPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="ToolbarItem_Clicked" Text="Menu1" />
+        <ToolbarItem Clicked="ToolbarItem_Clicked" Text="Menu2" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center">
-            <Button Clicked="Button_Clicked" Text="Navigation NextPage" />
+        <StackLayout HorizontalOptions="Center" 
+                     VerticalOptions="Center">
+            <Label x:Name="label" HorizontalTextAlignment="Center" />
+            <Button Clicked="Button_Clicked" Text="NavigationTo NextPage" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
