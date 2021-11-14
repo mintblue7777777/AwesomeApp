@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AwesomeApp.SytleExercise"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <!--<Style TargetType="Label">-->
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontAttributes" Value="Bold,Italic" />
+            </Style>
+            <Style
+                x:Key="redLabelStyle"
+                BasedOn="{StaticResource labelStyle}"
+                TargetType="Label">
+                <Setter Property="TextColor" Value="Red" />
+            </Style>
+            <Style
+                x:Key="blueLabelStyle"
+                BasedOn="{StaticResource labelStyle}"
+                TargetType="Label">
+                <Setter Property="TextColor" Value="Blue" />
+            </Style>
+            <Style
+                x:Key="yellowLabelStyle"
+                BasedOn="{StaticResource labelStyle}"
+                TargetType="Label">
+                <Setter Property="TextColor" Value="Yellow" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Style="{StaticResource labelStyle}" Text="同じスタイルを" />
+            <Label Style="{StaticResource labelStyle}" Text="適用したラベルを" />
+            <Label Style="{StaticResource labelStyle}" Text="設定する例" />
+            <Label Style="{StaticResource labelStyle}" Text="Hello" />
+            <Label Style="{StaticResource labelStyle}" Text="world" />
+            <!--<Label Text="同じスタイルを" />
+            <Label Text="適用したラベルを" />
+            <Label Text="設定する例" />
+            <Label Text="Hello" />
+            <Label Text="world!" />-->
+            <Label Style="{StaticResource labelStyle}" Text="ベーススタイル" />
+            <Label Style="{StaticResource redLabelStyle}" Text="赤のスタイル" />
+            <Label Style="{StaticResource blueLabelStyle}" Text="青のスタイル" />
+            <Label Style="{StaticResource yellowLabelStyle}" Text="黄色のスタイル" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

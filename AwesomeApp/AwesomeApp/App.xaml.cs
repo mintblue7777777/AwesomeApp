@@ -10,7 +10,7 @@ namespace AwesomeApp
         {
             InitializeComponent();
 
-            MainPage = new PrismCarouselPage1();
+            MainPage = new SytleExercise();
             //MainPage = new NavigationPage(new FromPage());
         }
 
