@@ -10,7 +10,7 @@ namespace AwesomeApp
         {
             InitializeComponent();
 
-            MainPage = new SytleExercise();
+            MainPage = new Gesture();
             //MainPage = new NavigationPage(new FromPage());
         }
 

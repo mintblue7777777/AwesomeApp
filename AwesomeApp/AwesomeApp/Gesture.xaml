@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AwesomeApp.Gesture"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label FontSize="Large" Text="Double tap!!">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Grid BackgroundColor="Red">
+                <Grid.GestureRecognizers>
+                    <PinchGestureRecognizer PinchUpdated="PinchGestureRecognizer_PinchUpdated" />
+                </Grid.GestureRecognizers>
+                <Label
+                    x:Name="labelStatus"
+                    FontSize="Large"
+                    Text="Display status" />
+            </Grid>
+            <Grid BackgroundColor="Blue">
+                <Grid.GestureRecognizers>
+                    <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />
+                </Grid.GestureRecognizers>
+                <Label
+                    x:Name="panLabelStatus"
+                    FontSize="Large"
+                    Text="Display status" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
