@@ -10,7 +10,7 @@ namespace AwesomeApp
         {
             InitializeComponent();
 
-            MainPage = new Gesture();
+            MainPage = new Animation();
             //MainPage = new NavigationPage(new FromPage());
         }
 
