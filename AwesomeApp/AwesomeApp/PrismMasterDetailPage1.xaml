@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage
+    x:Class="AwesomeApp.PrismMasterDetailPage1"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="MasterPage">
+            <StackLayout Padding="20">
+                <Button Clicked="Button_Clicked" Text="Page1" />
+                <Button Clicked="Button_Clicked" Text="Page2" />
+                <Button Clicked="Button_Clicked" Text="Page3" />
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage Title="DeatailPage">
+            <Label x:Name="labelPageName" Text="Page1" />
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
