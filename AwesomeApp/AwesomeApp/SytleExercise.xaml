@@ -10,43 +10,75 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="FontSize" Value="Large" />
                 <Setter Property="FontAttributes" Value="Bold,Italic" />
+                <Setter Property="FontSize" Value="10" />
             </Style>
             <Style
                 x:Key="redLabelStyle"
                 BasedOn="{StaticResource labelStyle}"
                 TargetType="Label">
                 <Setter Property="TextColor" Value="Red" />
+                <Setter Property="FontSize" Value="10" />
             </Style>
             <Style
                 x:Key="blueLabelStyle"
                 BasedOn="{StaticResource labelStyle}"
                 TargetType="Label">
                 <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="FontSize" Value="10" />
             </Style>
             <Style
                 x:Key="yellowLabelStyle"
                 BasedOn="{StaticResource labelStyle}"
                 TargetType="Label">
                 <Setter Property="TextColor" Value="Yellow" />
+                <Setter Property="FontSize" Value="10" />
+            </Style>
+            <Style
+                x:Key="customTitleStyle"
+                BaseResourceKey="TitleStyle"
+                TargetType="Label">
+                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="FontSize" Value="10" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Style="{StaticResource labelStyle}" Text="同じスタイルを" />
-            <Label Style="{StaticResource labelStyle}" Text="適用したラベルを" />
-            <Label Style="{StaticResource labelStyle}" Text="設定する例" />
-            <Label Style="{StaticResource labelStyle}" Text="Hello" />
-            <Label Style="{StaticResource labelStyle}" Text="world" />
-            <!--<Label Text="同じスタイルを" />
+            <StackLayout Padding="10">
+                <Label Style="{StaticResource labelStyle}" Text="同じスタイルを" />
+                <Label Style="{StaticResource labelStyle}" Text="適用したラベルを" />
+                <Label Style="{StaticResource labelStyle}" Text="設定する例" />
+                <Label Style="{StaticResource labelStyle}" Text="Hello" />
+                <Label Style="{StaticResource labelStyle}" Text="world" />
+            </StackLayout>
+            <!--<StackLayout>
+            <Label Text="同じスタイルを" />
             <Label Text="適用したラベルを" />
             <Label Text="設定する例" />
             <Label Text="Hello" />
-            <Label Text="world!" />-->
-            <Label Style="{StaticResource labelStyle}" Text="ベーススタイル" />
-            <Label Style="{StaticResource redLabelStyle}" Text="赤のスタイル" />
-            <Label Style="{StaticResource blueLabelStyle}" Text="青のスタイル" />
-            <Label Style="{StaticResource yellowLabelStyle}" Text="黄色のスタイル" />
+            <Label Text="world!" />
+        </StackLayout>-->
+            <StackLayout Padding="10">
+                <Label Style="{StaticResource labelStyle}" Text="ベーススタイル" />
+                <Label Style="{StaticResource redLabelStyle}" Text="赤のスタイル" />
+                <Label Style="{StaticResource blueLabelStyle}" Text="青のスタイル" />
+                <Label Style="{StaticResource yellowLabelStyle}" Text="黄色のスタイル" />
+            </StackLayout>
+            <StackLayout Padding="10">
+                <Label Style="{DynamicResource dynamicLabelStyle}" Text="ここのスタイルを実行時に切り替え" />
+                <Button Clicked="Button_Clicked" Text="スタイル切替" />
+                <Switch IsToggled="False" Toggled="Switch_Toggled" />
+            </StackLayout>
+            <StackLayout>
+                <Label Style="{StaticResource customTitleStyle}" Text="カスタムのタイトル" />
+                <Label Style="{DynamicResource TitleStyle}" Text="タイトル" />
+                <Label Style="{DynamicResource SubTitleStyle}" Text="サブタイトル" />
+                <Label Style="{DynamicResource CaptionStyle}" Text="キャプション" />
+                <Label Style="{DynamicResource ListItemTextStyle}" Text="リストのテキスト" />
+                <Label Style="{DynamicResource ListItemDetailTextStyle}" Text="リストの詳細テキスト" />
+                <Label Style="{DynamicResource BodyStyle}" Text="ボディ" />
+                <Label Text="未指定" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

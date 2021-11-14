@@ -15,6 +15,24 @@ namespace AwesomeApp
         public SytleExercise()
         {
             InitializeComponent();
+            this.Resources["dynamicLabelStyle"] = this.Resources["redLabelStyle"];
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            this.Resources["dynamicLabelStyle"] = this.Resources["blueLabelStyle"];
+        }
+
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value)
+            {
+                this.Resources["dynamicLabelStyle"] = this.Resources["redLabelStyle"];
+            }
+            else
+            {
+                this.Resources["dynamicLabelStyle"] = this.Resources["yellowLabelStyle"];
+            }
         }
     }
 }
