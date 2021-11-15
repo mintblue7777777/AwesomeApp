@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<ContentPage Appearing="ContentPage_Appearing"
     x:Class="AwesomeApp.Animation"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -29,6 +29,7 @@
                     TranslationX="100"
                     TranslationY="100" />
             </Grid>
+            <Label x:Name="labelAnimation" Text="Animation"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
