@@ -10,7 +10,7 @@ namespace AwesomeApp
         {
             InitializeComponent();
 
-            MainPage = new Animation();
+            MainPage = new Trigger();
             //MainPage = new NavigationPage(new FromPage());
         }
 

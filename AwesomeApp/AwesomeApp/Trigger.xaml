@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AwesomeApp.Trigger"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry>
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="true">
+                        <Setter Property="BackgroundColor" Value="Olive" />
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+            <Entry x:Name="entry" Text="" />
+            <Button Text="OK">
+                <Button.Triggers>
+                    <DataTrigger
+                        Binding="{Binding Text.Length, Source={x:Reference entry}}"
+                        TargetType="Button"
+                        Value="0">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
