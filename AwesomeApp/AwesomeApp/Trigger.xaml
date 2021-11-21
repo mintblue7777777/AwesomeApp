@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="AwesomeApp.Trigger"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AwesomeApp">
     <ContentPage.Content>
         <StackLayout>
             <Entry>
@@ -23,6 +24,18 @@
                     </DataTrigger>
                 </Button.Triggers>
             </Button>
+            <ListView x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Triggers>
+                    <EventTrigger Event="ItemSelected">
+                        <local:NotSelectableListViewTriggerAction />
+                    </EventTrigger>
+                </ListView.Triggers>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
