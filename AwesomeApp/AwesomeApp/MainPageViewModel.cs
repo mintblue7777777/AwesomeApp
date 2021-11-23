@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
-using System;
 using Prism.Mvvm;
 
 namespace AwesomeApp

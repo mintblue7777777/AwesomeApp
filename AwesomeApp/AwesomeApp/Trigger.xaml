@@ -4,6 +4,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AwesomeApp">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:IsGreaterZeroConverter x:Key="isGreaterZeroConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <Entry>
@@ -36,6 +41,24 @@
                     </EventTrigger>
                 </ListView.Triggers>
             </ListView>
+            <StackLayout>
+                <Entry x:Name="entryUserName" Text="" />
+                <Entry
+                    x:Name="entryPassword"
+                    IsPassword="True"
+                    Text="" />
+                <Button IsEnabled="False" Text="Login">
+                    <Button.Triggers>
+                        <MultiTrigger TargetType="Button">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding Text.Length, Source={x:Reference entryUserName}, Converter={StaticResource isGreaterZeroConverter}}" Value="true" />
+                                <BindingCondition Binding="{Binding Text.Length, Source={x:Reference entryPassword}, Converter={StaticResource isGreaterZeroConverter}}" Value="true" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="True" />
+                        </MultiTrigger>
+                    </Button.Triggers>
+                </Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
