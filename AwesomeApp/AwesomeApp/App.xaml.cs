@@ -10,7 +10,7 @@ namespace AwesomeApp
         {
             InitializeComponent();
 
-            MainPage = new MessegingMyPage();
+            MainPage = new DeviceOperation();
             //MainPage = new NavigationPage(new FromPage());
         }
 
