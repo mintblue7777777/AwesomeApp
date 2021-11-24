@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AwesomeApp.Effect"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AwesomeApp">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label x:Name="labelTimer" FontSize="Large">
+                <Label.Effects>
+                    <local:UnderlineEffect IsEnabled="False" />
+                </Label.Effects>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeApp.Android", "AwesomeApp\AwesomeApp.Android\AwesomeApp.Android.csproj", "{B7A02FC2-CB34-4260-B9E8-4CE7897AF76F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeApp.iOS", "AwesomeApp\AwesomeApp.iOS\AwesomeApp.iOS.csproj", "{480BCA6E-062D-463C-9955-29A3CFE24723}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeApp", "AwesomeApp\AwesomeApp\AwesomeApp.csproj", "{33A621E1-CAD7-40F8-ADEE-E04898C00670}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwesomeApp", "AwesomeApp\AwesomeApp\AwesomeApp.csproj", "{33A621E1-CAD7-40F8-ADEE-E04898C00670}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
