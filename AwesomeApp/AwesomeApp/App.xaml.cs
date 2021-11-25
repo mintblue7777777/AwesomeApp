@@ -10,7 +10,7 @@ namespace AwesomeApp
         {
             InitializeComponent();
 
-            MainPage = new Effect();
+            MainPage = new CustomRenderer();
             //MainPage = new NavigationPage(new FromPage());
         }
 
