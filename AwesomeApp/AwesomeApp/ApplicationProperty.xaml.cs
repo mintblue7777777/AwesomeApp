@@ -19,16 +19,28 @@ namespace AwesomeApp
 
         private void restore_Clicked(object sender, EventArgs e)
         {
-            if (Application.Current.Properties.ContainsKey("input"))
-            {
-                this.entry.Text = (string)Application.Current.Properties["input"]; ;
-            }
+            //ApplicationProperty
+            //if (Application.Current.Properties.ContainsKey("input"))
+            //{
+            //    this.entry.Text = (string)Application.Current.Properties["input"]; ;
+            //}
+
+            //LocalFile
+            this.entry.Text = DependencyService
+                .Get<IFileIO>()
+                .Read("sample.txt");
         }
 
-        private async void store_Clicked(object sender, EventArgs e)
+        private void store_Clicked(object sender, EventArgs e)
         {
-            Application.Current.Properties["input"] = this.entry.Text;
-            await Application.Current.SavePropertiesAsync();
+            //ApplicationProperty
+            //Application.Current.Properties["input"] = this.entry.Text;
+            //await Application.Current.SavePropertiesAsync();
+
+            //LocalFile
+            var a = DependencyService.Get<IFileIO>();
+            a.Save("sample.txt", this.entry.Text);
+
         }
     }
 }

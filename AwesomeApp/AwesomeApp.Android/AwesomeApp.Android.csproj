@@ -68,6 +68,9 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AwesomeApp\IFileIO.cs">
+      <Link>IFileIO.cs</Link>
+    </Compile>
     <Compile Include="CustomButtonRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
