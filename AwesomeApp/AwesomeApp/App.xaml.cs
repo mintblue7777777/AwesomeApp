@@ -10,7 +10,7 @@ namespace AwesomeApp
         {
             InitializeComponent();
 
-            MainPage = new CustomRenderer();
+            MainPage = new MediaPlugin();
             //MainPage = new NavigationPage(new FromPage());
         }
 
