@@ -10,7 +10,7 @@ namespace AwesomeApp
         {
             InitializeComponent();
 
-            MainPage = new MediaPlugin();
+            MainPage = new ApplicationProperty();
             //MainPage = new NavigationPage(new FromPage());
         }
 

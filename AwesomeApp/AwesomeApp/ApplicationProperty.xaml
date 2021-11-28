@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AwesomeApp.ApplicationProperty"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="entry" />
+            <Button
+                x:Name="store"
+                Clicked="store_Clicked"
+                Text="Store" />
+            <Button
+                x:Name="restore"
+                Clicked="restore_Clicked"
+                Text="Restore" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
