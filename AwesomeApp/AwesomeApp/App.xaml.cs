@@ -10,7 +10,7 @@ namespace AwesomeApp
         {
             InitializeComponent();
 
-            MainPage = new ApplicationProperty();
+            MainPage = new PageSQlite();
             //MainPage = new NavigationPage(new FromPage());
         }
 
